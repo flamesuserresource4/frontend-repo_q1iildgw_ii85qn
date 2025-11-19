@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Landing from './components/Landing'
 import Auth from './components/Auth'
 import Onboarding from './components/Onboarding'
@@ -22,12 +21,6 @@ function ProtectedRoute({ children }) {
 }
 
 export default function App() {
-  const navigate = useNavigate()
-  useEffect(() => {
-    const user = getUser()
-    if (!user) navigate('/auth')
-  }, [])
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <Navbar />
